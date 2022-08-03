@@ -1,3 +1,4 @@
+import type { NextPage } from 'next';
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
@@ -14,7 +15,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ allPostsData }) {
+const Home: NextPage = ({ allPostsData }) => {
   return (
     <Layout home>
       <Head>
@@ -50,3 +51,5 @@ export default function Home({ allPostsData }) {
     </Layout>
   );
 }
+
+export default Home;
